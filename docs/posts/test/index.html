@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Akshata Mhaski">
+<meta name="dcterms.date" content="2024-08-16">
+
+<title>website - Analyzing Articles</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">website</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Analyzing Articles</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">news</div>
+                <div class="quarto-category">code</div>
+                <div class="quarto-category">analysis</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Akshata Mhaski </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 16, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="hello-everyone" class="level2">
+<h2 class="anchored" data-anchor-id="hello-everyone">Hello Everyone</h2>
+<p>The title of the analyzed article from Stuff is “The Green Divide: How wealth buys shade in a warming world.”</p>
+<p>The article discusses the notable differences in tree canopy coverage in urban areas in New Zealand, emphasizing the link between socio-economic status and availability of green spaces, impacting a community’s ability to withstand heat. Studies show that affluent communities have more trees and cooler temperatures, whereas poorer regions lack tree coverage, leading to increased susceptibility to the impacts of climate change. The background of the article is established early on, particularly in the lines: “Picture yourself on a hot day in the shade of a tall building. It offers some respite from the sun but the warmth still rises from the footpath through your shoes and bounces off the surrounding buildings. Out of the shade, the heat is immediate and relentless.” This vivid description sets the stage for the discussion by illustrating the harsh reality of urban heat, emphasizing the crucial role of shade in providing relief. The background is further reinforced by the explanation of how trees actively cool the air: “Unlike buildings, trees don’t just cast a shadow — they help actively cool the air by releasing moisture through a process called transpiration.” This section is essential as it provides the reader with the scientific context for understanding why tree canopy coverage is a critical factor in climate resilience, particularly in urban environments. The lede is encapsulated in the sentence: “The cooling shade of trees will be crucial to adapting to climate change. But data from New Zealand cities shows tree cover is uneven — and often dictated by wealth.” This sentence succinctly introduces the central theme of the article: the uneven distribution of tree cover in New Zealand cities, which is closely tied to socio-economic disparities. Placed early in the article, the lede effectively captures the reader’s attention and sets up the discussion that follows, ensuring that the primary issue—the inequitable distribution of green spaces—is clear from the outset. The main result of the article is articulated in the line: “If [councils] know that there are neighbourhoods that only have four percent canopy cover, they would hopefully see it as their responsibility to increase canopy cover in that area.” This statement underscores the article’s call to action, highlighting the role of local councils in addressing the uneven distribution of tree coverage. By pinpointing areas with low canopy cover, councils can take targeted actions to plant more trees and enhance climate resilience in disadvantaged neighbourhoods. This result is crucial because it connects the data presented earlier in the article with a concrete solution, emphasizing the importance of proactive measures in mitigating the impacts of climate change on vulnerable communities. The summary of the article is effectively conveyed in the lines: “The data from all three councils reveals that tree canopy cover is incredibly uneven. Some parts of Auckland have less than 2 percent tree cover, whereas neighbourhoods like the Waitakere Ranges have up to 82 percent cover.” These lines encapsulate the stark disparities in tree coverage between different neighbourhoods, underscoring the socio-economic divide that influences who benefits from green spaces. By summarizing the data, the article reinforces the main point that wealthier regions enjoy greater advantages from tree cover, which in turn helps them stay cooler during hot weather. This summary serves to solidify the reader’s understanding of the issue and the need for more equitable distribution of green spaces.</p>
+<p>Blog Post The Welch-Berlekamp Algorithm for Correcting Errors in Data (Jeremy Kun) This article discusses the application of Reed-Solomon error-correcting codes, with a specific focus on the Berlekamp-Welch algorithm for correcting errors during data transmission. The article weaves through concepts like polynomial interpolation and the use of polynomials for effective error correction, supplemented by Python code samples to demonstrate these ideas. The background of the article is laid out early, specifically in the section from “In our last post…” to “get resilience to three errors that can happen anywhere. What a bargain!” Here, Kun revisits the fundamental concepts of error-correcting codes, particularly emphasizing the use of polynomials. This section is crucial because it sets the stage for understanding why Reed-Solomon codes, and subsequently the Welch-Berlekamp algorithm, are so useful in the context of data transmission and error correction. The lede is presented in a straightforward manner, found within the opening lines of the main body of the article, particularly in the sentence: “In this post we’ll implement Reed-Solomon error-correcting codes and use them to play with codes.” This sentence directly introduces the reader to the core focus of the article—implementing Reed-Solomon codes and exploring their applications, specifically through the Welch-Berlekamp algorithm. This introduction effectively primes the reader for the technical content that follows, ensuring that they are prepared for the detailed explanations and examples. The summary of the article can be found towards the end, particularly in the section from “A larger example” to the end of the post. Kun recaps the significance of the Welch-Berlekamp algorithm and its utility in real-world scenarios. Finally, the post concludes with a reflective summary that ties together the discussion. This serves as the conclusion, where the effectiveness of Reed-Solomon codes is acknowledged alongside their practical limitations, particularly the computational intensity of the decoding process. The line, “While Reed-Solomon codes are effective, decoding can be computationally intensive,” reinforces the main points while also suggesting directions for future exploration. This provides closure to the reader, maintaining the continuous flow of the narrative and offering a final reflection on the subject. The main result of the article is detailed in the segment from “Now to fix an encoding/decoding scheme…” to “return P.coefficients.” This part of the article delves into the implementation of the Reed-Solomon encoding process and the Berlekamp-Welch decoding algorithm. Kun includes Python code to illustrate how to encode a message and accurately decode it even when errors are present. This hands-on section not only explains the algorithm but also demonstrates its practical application, making the abstract concepts more tangible.</p>
+<p>The TED Talk “Why I Fell in Love with Monster Prime Numbers” by Adam Spencer is an engaging exploration of prime numbers, specifically the gigantic “monster primes” that have captivated mathematicians for centuries. Spencer, an Australian comedian, author, and radio presenter with a passion for mathematics, uses humour and enthusiasm to make complex mathematical concepts accessible and entertaining to a general audience. In the background of the talk (0:00 - 1:20), Spencer introduces himself, sharing his diverse background in pure mathematics, debating, and his career as a radio host and comedian. He humorously touches on some common stereotypes about Australians, setting a light-hearted tone while establishing his credibility and unique perspective on mathematics. The lede (1:20 - 1:52) quickly transitions to the main theme, where Spencer expresses his deep love for mathematics, particularly prime numbers. He shares a childhood anecdote, stating, “As a kid, I was always intrigued by numbers, but it wasn’t until I encountered prime numbers that I truly fell in love with mathematics.” This effectively draws the audience into the topic of prime numbers’ allure and mystery. In the summary (3:20 - 4:47), Spencer explains the beauty and significance of prime numbers, introducing their basic properties. He emphasizes their relevance beyond mathematics, linking them to real-world applications like cryptography. Spencer notes, “Prime numbers are the building blocks of all numbers. They’re numbers that are only divisible by 1 and themselves.” He adds, “Prime numbers may seem like a niche topic, but they have profound implications, from the fundamentals of math to the security of online transactions.” This succinctly conveys the broader relevance of prime numbers to the audience. The main result (4:47 - 15:03) of the talk explores the history of searching for large prime numbers, referencing famous mathematicians like Leonhard Euler and Lucas, who made significant contributions to this field. Spencer describes the discovery of the largest known prime number by Curtis Cooper, highlighting human curiosity and the endless possibilities in mathematics. In the conclusion (15:03 - End), Spencer reflects on the broader implications of these discoveries, emphasizing the collaboration between humans and machines in modern mathematical exploration. “While the hunt for monster primes continues, what excites me most is the way we’re combining the power of human insight with the brute force of technology to make these discoveries,” Spencer says. This final reflection leaves the audience with a sense of wonder about the future of mathematics and technology, underscoring the importance of continued exploration and collaboration in these fields. Spencer’s talk is a captivating journey into the world of prime numbers, making a complex and often abstract subject both understandable and exciting for a general audience. Through his engaging narrative and insightful reflections, Spencer not only educates but also inspires his audience to appreciate the beauty and significance of mathematics.</p>
+<p>The Green Divide article employs a traditional journalistic format, which is well-suited for delivering in-depth analysis. The article effectively combines narrative storytelling with statistical data to highlight the disparities in tree canopy coverage across socio-economic lines. This approach makes the complex issue of environmental inequality more relatable and understandable to the reader. One unusual aspect of this article is its blending of personal anecdotes with scientific data, a technique that humanizes the statistical information and deepens the reader’s connection to the topic. In contrast, the Welch-Berlekamp Algorithm blog post takes advantage of the flexibility inherent in blog formats. Blogs allow for a conversational tone and the integration of multimedia elements, such as code snippets and diagrams, which are particularly useful for explaining technical concepts. An interesting feature of this blog is the inclusion of executable code within the post, which blurs the line between a traditional blog and an interactive tutorial, making the content more engaging for an audience interested in practical applications. The TED Talk by Adam Spencer on prime numbers leverages a format designed for live presentations, relying on the speaker’s charisma, storytelling, and visual aids to engage the audience. TED Talks are typically structured to convey complex ideas into digestible segments, making them more accessible to a general audience. Spencer’s talk is highly effective due to his dynamic delivery and use of humour, which make the topic of prime numbers exciting and relatable. This reliance on the speaker’s delivery is a unique and essential aspect of the TED Talk format, highlighting the importance of performance in conveying complex ideas in an accessible manner. The comparison reveals distinct strengths across the different formats. The article and blog post offer more comprehensive content due to their lack of time constraints, with the article providing an in-depth analysis of tree canopy coverage backed by data, and the blog post offering a detailed explanation of a complex algorithm with practical coding examples. In contrast, the TED Talk serves as a concise introduction to its topic. When it comes to engaging the audience, the TED Talk stands out due to its visual and auditory presentation. The speaker’s charisma and humour make the subject matter more captivating, which is challenging to achieve through text alone. The blog post engages readers through its interactive elements and conversational style, while the article uses narrative techniques and data visualization to maintain reader interest. In terms of accessibility, the blog post and TED Talk are generally more approachable for a wider audience. They are designed to explain complex topics in a simplified and engaging manner. The article, while still accessible, demands more time and concentration from readers due to its thorough analysis and data-driven approach. Each format effectively serves its intended purpose. The article excels in providing detailed analysis and raising awareness about social issues. The blog post is ideal for educating readers on technical subjects with hands-on examples. The TED Talk is particularly effective in sparking interest and offering a broad overview of a topic.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
